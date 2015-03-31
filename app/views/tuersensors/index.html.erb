@@ -1,0 +1,51 @@
+<h2>Logbuch der Vogelbesuche</h2>
+
+<div id='chart'>
+<%= render_chart(@chart, 'chart') %>
+</div>
+
+<table class="log">
+  <tr>
+    <th>Tag</th>
+    <th>Anzahl</th>
+  </tr>
+
+<% @dailyVisits.each do |day| %>
+  <tr>
+    <td><%= day.day %></td>
+    <td><%= day.cnt %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<h3>Detaillierte Auflistung aller Besuche</h3>
+
+<table class="log">
+  <tr>
+    <th>Typ</th>
+    <th>Zeit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tuersensors.each do |tuersensor| %>
+  <tr>
+    <td><%= tuersensor.movetype %></td>
+    <td><%= tuersensor.time %></td>
+    <% if params[:bearb] == "ja" then %>
+      <td><%= link_to 'Show', tuersensor %></td>
+      <td><%= link_to 'Edit', edit_tuersensor_path(tuersensor) %></td>
+      <td><%= link_to 'Destroy', tuersensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<p>
+<%= link_to "Technisches Logbuch", cpu_temperatures_path %>
+</p>

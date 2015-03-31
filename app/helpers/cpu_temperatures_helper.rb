@@ -1,0 +1,2 @@
+module CpuTemperaturesHelper
+end

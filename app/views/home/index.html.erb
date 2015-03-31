@@ -1,0 +1,41 @@
+<table class="maintable" align="center">
+	<tr>
+		<td>
+			<a href="pages/currimage" class="maintable">
+				<%= image_tag "images/bird_100px.png", {:size => "100x100"} %><br />
+				Bilder
+			</a>
+		</td>
+		<td>
+			<%= link_to(tuersensors_path, {:class => "maintable"}) do%>
+				<%= image_tag "images/calendar_100px.png", {:size => "100x100"} %><br />
+				Logbücher
+			<% end %>
+		</td>
+		<td>
+			<%= link_to(cpu_temperatures_path, {:class => "maintable"}) do%>
+				<%= image_tag "images/processing-02_100px.png", {:size => "100x100"} %><br />
+				Technische<br />Informationen
+			<% end %>
+		</td>
+		<td>
+			<%= link_to("pages/about", {:class => "maintable"}) do%>
+				<%= image_tag "images/email_100px.png", {:size => "100x100"} %><br />
+				Kontakt
+			<% end %>
+		</td>
+	</tr>
+</table>
+
+<% daysAgo = Time.zone.now.to_date.mjd - @tuersensor.time.to_date.mjd %>
+<p align="center">Letzter Besuch eines Vogels im Vogelhaus 
+	<span title="<%= @tuersensor.time %>">
+	<% case daysAgo %>
+	<% when 0 %>
+		heute
+	<% when 1 %>
+		gestern
+	<% else %>
+		vor	<%= daysAgo %> Tagen
+	<% end %>	
+</span></p>

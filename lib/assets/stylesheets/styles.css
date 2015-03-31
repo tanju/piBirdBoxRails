@@ -1,0 +1,183 @@
+/* 
+ * Raspberry Pi Birdbox Website
+ * 
+ * Stylesheet for displays an projection
+ * 
+ * Jan Arnhold, March 2013
+ * 
+ */
+
+* {
+	margin-top: 0px;
+}
+body
+{
+	color: #505050;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 12pt;
+	background-color: #FFD662;
+	padding: 0px;
+	margin: 0px;
+}
+
+p{
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+div.main{
+	padding-left: 10px;
+}
+
+div.topline
+{
+	background-image: -webkit-linear-gradient(top, white 30%, #f0f0f0 100%);
+	background-image: -moz-linear-gradient(top, white 30%, #f0f0f0 100%);
+	background-image: -o-linear-gradient(top, white 30%, #f0f0f0 100%);
+	margin: 0px;
+	padding-left: 10px;
+	padding-top: 0px;
+	color: #3B62A3;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.topline a:link, a:visited, a:active{
+	text-decoration: none;	
+}
+
+#headline
+{
+}
+
+.topline h1
+{
+	/*background-image: -webkit-linear-gradient(left, #e0e0e0 0%, #f0f0f0 75%);*/
+	/*background-color: #25F0F5;*/
+	padding-top: 0.25em;
+	padding-left: 0px;
+	border-radius: 5px;
+	color: #CDD927;
+	/*border: 1px solid #e0e0e0;*/
+	/*box-shadow: 5px 5px 2px #ececec;*/
+	font-size: 28pt;
+	margin-left: 0px;
+	text-decoration: none;
+}
+
+/*
+ * Main Menu
+ */
+.mainmenu div	{
+	margin-left: 0px;
+}
+
+.mainmenu a:link, a:visited, a:active
+{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	/*background-image: -webkit-linear-gradient(top, #e0e0e0 0%, #f0f0f0 90%);*/
+	padding-right: 0.25em;
+	padding-left: 0px;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	color: #909090;
+	font-weight: bold;
+	text-decoration: none;
+	/*margin-right: 0.5em;*/
+	text-shadow: 1px 1px 1px white;
+}
+
+.mainmenu a:hover	
+{
+	color: #CDD927;
+}
+/*
+.mainmenu a:active
+{
+	color: #909090;
+}
+*/
+
+/*
+ * Main Table
+ */
+table.maintable
+{
+	padding-top: 4em;
+	height: 33%;
+	text-align: center;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.maintable td
+{
+	width: 25%;
+	height: 100px;
+	text-align: center;
+	vertical-align: top;
+}
+
+.maintable img
+{
+	padding-bottom: 0.5em;
+}
+
+a.maintable:link, a.maintable:active, a.maintable:visited	
+{
+	text-decoration: none;
+	color: #FFD662;
+	/* Chrome, Safari, KDE */
+	-webkit-transition-property:color;
+	-webkit-transition-duration:1s;
+	-webkit-transition-delay:0s;
+	/* Mozilla */
+	-moz-transition-property:color;
+	-moz-transition-duration:1s;
+	-moz-transition-delay:0s;
+	/* Opera */
+	-o-transition-property:color;
+	-o-transition-duration:1s;
+	-o-transition-delay:0s;
+}
+
+.maintable a:hover	
+{
+	color: #505050;
+}
+
+p.currimage{
+	text-align: center;
+}
+
+h2, h3, h4
+{
+	padding-top: 1em;
+}
+
+.log td 
+{
+	padding-top: 0.25em;
+	padding-right: 1em;
+}
+
+.log th
+{
+	text-align: left;
+}
+
+a:active, a:visited, a
+{
+	color: #505050;
+}
+
+a:hover
+{
+	color: #303030;
+}
+
+table
+{
+	margin-top: 1em;
+	border: 0;
+}

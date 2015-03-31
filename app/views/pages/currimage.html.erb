@@ -1,0 +1,28 @@
+<%
+	lastPhotoTime = File.mtime('/home/jan/prg/ruby/vogelhaus/public/assets/images/capt_current_640.jpg');
+	daysAgo = Time.zone.now.to_date.mjd - lastPhotoTime.to_date.mjd;
+%>
+<div class="main">
+	<p> <br /> </p>
+	<p class="currimage">
+		<span title="<%= lastPhotoTime %>">
+		<%= image_tag "images/capt_current_640.jpg", {:size => "640x360", :id => "currimage"} %>
+	</p>
+	<p align="center">
+		Bilder werden automatisch aufgenommen, wenn der Sensor ausgelöst wurde. 
+		Dieses Bild 
+		<span title="<%= lastPhotoTime %>">
+		<% if daysAgo > 1 then %>
+			vor <%= daysAgo %> Tagen.
+		<% elsif daysAgo == 1 %>
+			gestern.
+		<% else %>
+			heute.
+		<% end %>
+		</span>
+	</p>
+	<p align="center">
+		<%= link_to "Livebild ansehen", liveimage_page_path %>
+	</p>
+</div>
+

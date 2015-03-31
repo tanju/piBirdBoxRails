@@ -1,0 +1,43 @@
+<h2>CPU Temperaturverlauf</h2>
+
+<div id='chart'>
+<%= render_chart(@chart, 'chart') %>
+</div>
+
+<p>
+	<span title="<%= @cpu_temperatures.last.count_temperature %> Temperaturwerte in der Datenbank.">Gemessene Temperaturen</span> 
+	liegen im Bereich 
+	von <span title="<%= @cpu_temperature_min.time %>"><%= (@cpu_temperature_min.temperature/10) %>°C</span> 
+	bis <span title="<%= @cpu_temperature_max.time %>"><%= (@cpu_temperature_max.temperature/10) %>°C</span> 
+	- im Durchschnitt <%= @cpu_temperatures.last.average_temperature %>°C.</p>
+
+<p>In Betrieb seit <%= @uptime %> mit einer 
+	<span title="Letzte Minute: <%= @cpuload_1 %>, 5 Minuten: <%= @cpuload_5 %>">CPU-Last von <%= @cpuload_15 %> in den 15 Minuten. <span title="<%= @free_memory_total %> MiB Total"><%= @free_memory %> MiB freier Speicher.
+	<% if @users_logged_in > 0 then %>
+		<%= @users_logged_in %> am System angemeldete Nutzer.
+	<% end %>
+</p>
+
+<% if false then%>
+
+	<table>
+	  <tr>
+	    <th>Time</th>
+	    <th>Temperature</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+	<% @cpu_temperatures.each do |cpu_temperature| %>
+	  <tr>
+	    <td><%= cpu_temperature.time %></td>
+	    <td><%= cpu_temperature.temperature %></td>
+	    <td><%= link_to 'Show', cpu_temperature %></td>
+	    <td><%= link_to 'Edit', edit_cpu_temperature_path(cpu_temperature) %></td>
+	    <td><%= link_to 'Destroy', cpu_temperature, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+<% end %>

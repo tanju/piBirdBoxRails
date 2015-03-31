@@ -1,0 +1,27 @@
+<h2>Technisches Logbuch</h2>
+
+<%= link_to "Logbuch der Vogelbesuche", tuersensors_path %>
+
+<table class="log">
+  <tr>
+    <th>Zeit</th>
+    <th>Nachricht</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @logtexts.each do |logtext| %>
+  <tr>
+    <td><%= logtext.created_at %></td>
+    <td><%= logtext.msg %></td>
+    <% if false then %>
+    <td><%= link_to 'Details', logtext %></td>
+    <td><%= link_to 'Entfernen', logtext, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New Logtext', new_logtext_path %>

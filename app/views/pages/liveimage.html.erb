@@ -1,0 +1,22 @@
+<%
+	imgPath = '/home/jan/prg/ruby/vogelhaus/public/assets/images/capt_live_640.jpg'
+
+	system "/home/jan/prg/ruby/vogelhaus/lib/photo_live.sh"
+	lastPhotoTime = File.mtime( imgPath );
+
+%>
+<div class="main">
+	<p> <br /> </p>
+	<p class="currimage">
+		<%= image_tag "images/capt_live_640.jpg", {:size => "640x360", :id => "currimage"} %>
+	</p>
+	<p align="center">
+		 Aufnahme von
+		 <%= lastPhotoTime.strftime( "%T" ) %>
+	</p>
+	<p align="center">
+		<%= link_to "Zurück", currimage_page_path %>
+		zur Aufnahme des letzten Besuchs
+	</p>
+</div>
+

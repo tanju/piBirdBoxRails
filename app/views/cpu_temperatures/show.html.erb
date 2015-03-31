@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time:</b>
+  <%= @cpu_temperature.time %>
+</p>
+
+<p>
+  <b>Temperature:</b>
+  <%= @cpu_temperature.temperature %>
+</p>
+
+
+<%= link_to 'Edit', edit_cpu_temperature_path(@cpu_temperature) %> |
+<%= link_to 'Back', cpu_temperatures_path %>

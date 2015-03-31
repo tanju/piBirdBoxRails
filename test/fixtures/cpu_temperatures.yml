@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time: 2013-03-29 22:51:44
+  temperature: 1
+
+two:
+  time: 2013-03-29 22:51:44
+  temperature: 1

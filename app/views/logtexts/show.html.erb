@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Eventtype:</b>
+  <%= @logtext.eventtype %>
+</p>
+
+<p>
+  <b>Msg:</b>
+  <%= @logtext.msg %>
+</p>
+
+
+<%= link_to 'Edit', edit_logtext_path(@logtext) %> |
+<%= link_to 'Back', logtexts_path %>

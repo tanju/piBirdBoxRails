@@ -1,0 +1,25 @@
+<%= form_for(@cpu_temperature) do |f| %>
+  <% if @cpu_temperature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cpu_temperature.errors.count, "error") %> prohibited this cpu_temperature from being saved:</h2>
+
+      <ul>
+      <% @cpu_temperature.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature %><br />
+    <%= f.number_field :temperature %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
