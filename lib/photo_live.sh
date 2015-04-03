@@ -8,4 +8,4 @@
 
 FILENAME="/home/jan/prg/ruby/vogelhaus/public/assets/images/capt_live_640.jpg"
 
-raspistill -o "${FILENAME}" -t 1 -w 648 -h 486 -n
+raspistill -o "${FILENAME}" -t 1 -w 648 -h 486 -n -ISO 640

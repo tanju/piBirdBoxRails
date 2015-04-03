@@ -109,6 +109,7 @@ class BirdboxClient
 				@jabber.send('Nistkasten wurde betreten oder verlassen')
 
 				# take a photo
+				sleep( PHOTO_DELAY_BEFORE );
 				for i in PHOTO_RANGE
 					if i == 0 then
 						system PHOTO_CMD + " " + PHOTO_PAR_SENSOR + "_" + i.to_s
